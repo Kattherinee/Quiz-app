@@ -27,10 +27,11 @@ export default function Question({ onSelect, idx, onSkipAnswer }) {
   }
 
   let answerState = "";
-  if (answer.isCorrect === true) {
-    answerState = "correct";
-  } else if (answer.isCorrect === false) {
-    answerState = "wrong";
+
+  if (answer.selectedAnswer && answer.isCorrect !== null) {
+    answerState = answer.isCorrect ? "correct" : "wrong";
+  } else if (answer.selectedAnswer) {
+    answerState = "answered";
   }
 
   return (
