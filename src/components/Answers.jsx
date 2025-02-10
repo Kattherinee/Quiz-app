@@ -19,7 +19,7 @@ export default function Answers({
       {shuffledAnswers.current.map((answer, id) => {
         const isSelected = selectedAnswer === answer;
         let cssClass = "";
-        if (answerState === "answered" && isSelected) {
+        if (isSelected && answerState === "answered") {
           cssClass = "selected";
         }
         if (
